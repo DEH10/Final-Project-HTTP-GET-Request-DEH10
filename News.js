@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     document.querySelectorAll('.news-item').forEach(item => {
         item.addEventListener('click', () => {
             const topic = item.id.replace('-news', ''); // Extract topic from the news item ID
-            searchTopic(topic, newsApiKey); // Pass the apiKey and topic here
+            await searchTopic(topic, newsApiKey); // Pass the apiKey and topic here
         }, { passive: true }); // Add { passive: true } here
     });
 
