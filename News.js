@@ -119,4 +119,4 @@ function displayNewsOnPage(responseData) {
         // Append the news item div to the news container
         newsContainer.appendChild(newsDiv);
     });
-   
+}
