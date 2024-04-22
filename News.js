@@ -5,7 +5,6 @@ async function searchTopic(topic, newsApiKey) {
         loadingSpinner.style.display = 'block';
     }
 
-    //const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&country=us&apiKey=${newsApiKey}`; //By Country
     const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
     const requestOptions = {
         method: 'GET',
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     document.querySelectorAll('.news-item').forEach(item => {
         item.addEventListener('click', () => {
             const topic = item.id.replace('-news', ''); // Extract topic from the news item ID
-            await searchTopic(topic, newsApiKey); // Pass the apiKey and topic here
+            searchTopic(topic, newsApiKey); // Pass the apiKey and topic here
         }, { passive: true }); // Add { passive: true } here
     });
 
