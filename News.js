@@ -86,7 +86,7 @@ function displayNewsOnPage(responseData) {
     newsContainer.innerHTML = '';
 
     // Iterate over each news article and create HTML elements to display them
-    response.news.forEach(newsItem => {
+    responseData.forEach(newsItem => {
         // Create a container for each news article
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('news-item');
