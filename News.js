@@ -5,8 +5,8 @@ async function searchTopic(topic, newsApiKey) {
         loadingSpinner.style.display = 'block';
     }
 
-    const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&country=us&apiKey=${newsApiKey}`; //By Country
-    //const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
+    //const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&country=us&apiKey=${newsApiKey}`; //By Country
+    const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
     const requestOptions = {
         method: 'GET',
         headers: {
