@@ -19,10 +19,10 @@ async function searchTopic(topic, newsApiKey) {
         const responseData = await response.json();
         console.log(responseData); // Log Response Data
 
-        if (!responseData || !responseData.articles) {
+        if (!responseData || !responseData.news) {
             throw new Error('Response data or articles not found');
         }
-        displayNewsOnPage(responseData.articles);
+        displayNewsOnPage(responseData.news);
     } catch (error) {
         // Display error message
         const errorMessage = document.getElementById('error-message');
@@ -74,18 +74,19 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 // Function to display news articles on the webpage
-function displayNewsOnPage(news) {
+function displayNewsOnPage(responseData) {
     const newsContainer = document.getElementById('news-container');
     if (!newsContainer) {
         console.error('news-container element not found');
         return;
     }
-
+    const news = responseData.news; // Access the news array from responseData
+	
     // Clear the existing content of the news container
     newsContainer.innerHTML = '';
 
     // Iterate over each news article and create HTML elements to display them
-    news.forEach(newsItem => {
+    responseDatanews.forEach(newsItem => {
         // Create a container for each news article
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('news-item');
